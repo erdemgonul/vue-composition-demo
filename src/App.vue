@@ -1,17 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <TraditionalVueComponent :sampleWords="sampleWords" />
+  <CompositionVueComponent :sampleWords="sampleWords" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TraditionalVueComponent from "./components/TraditionalVueComponent.vue";
+import CompositionVueComponent from "./components/CompositionVueComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      sampleWords: [
+        "Car",
+        "Motorcycle",
+        "Band",
+        "Television",
+        "And",
+        "Or",
+        "Rock",
+        "Pop",
+        "Surf",
+        "Google",
+      ],
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    TraditionalVueComponent,
+    CompositionVueComponent,
+  },
+};
 </script>
 
 <style>
